@@ -1,0 +1,227 @@
+
+* { margin: 0; padding: 0;}
+
+body { margin: 0; padding: 0; font-family: 'OpenSans', 'Helvetica', 'Arial', sans-serif;}
+
+
+.header {
+  position: relative;
+
+  background-color: #0a0e34;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  max-height: 960px;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background-color: rgba(10, 14, 52, 0.9);
+}
+
+.header_wrapper {
+  position: relative;
+  z-index: 2;
+
+  color: white;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  max-width: 1532px;
+  margin-left: auto;
+  margin-right: auto;
+  /*height: 80vh;  надо бы убрать*/
+  border: 1px solid #f0f;
+}
+
+.logo {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header_headline {
+  display: block;
+  text-align: left;
+  line-height: 1.4;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+}
+
+.header_headline {
+  font-size: 8vw;
+}
+
+.headline_right {
+  margin-left: 20vw;
+  border: 1px solid red;
+}
+
+.button {
+  background-color: #5e42b0;
+  border: none;
+  border-radius: 38px;
+  color: inherit;
+  font-size: 8px;
+  line-height: 1.4;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: left;
+
+  /*display: block;*/
+  width: 100%;
+  height: 35px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.button:hover {
+  background-color: #5132ac;
+}
+
+.market {
+  font-weight: bold;
+}
+
+.content_wrapper {
+  max-width: 1532px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.block_clear {
+  box-sizing: border-box;
+  padding: 10px 20px 50px;
+  background-color: #ffffff;
+
+}
+
+.section_headline {
+  color: #e7e7e7;
+  font-size: 50px;
+  line-height: 1.4;
+  text-transform: uppercase;
+
+  margin-bottom: 0.5em;
+}
+
+.block_grey {
+  box-sizing: border-box;
+  padding: 58px 20px 50px;
+  background-color: #f5f4f9;
+}
+
+.block_headline {
+  color: #c1c1c1;
+  font-size: 23px;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  margin-bottom: 1em;
+}
+
+.first::before {
+  content: "01";
+  color: #000000;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: underline solid red;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 3px;
+}
+
+.main_text p {
+  color: #000000;
+  font-size: 15px;
+  line-height: 1.4;
+  text-decoration: none;
+  text-align: left;
+}
+
+
+@media (max-width: 640px) and (orientation:portrait) {
+  .header {
+    background-image: url("../images/football_767.jpg");
+  }
+
+  .logo {
+    width: 133px;
+  }
+  .header_text {
+    margin-top: 96px;
+    margin-bottom: 72px;
+  }
+
+}
+
+@media (min-width: 641px) {
+  .header_buttons {
+    display: flex;
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    background-image: url("../images/football_1280.jpg");
+  }
+  .header_wrapper {
+    padding: 40px 20px 84px;
+  }
+  .logo {
+    width: 133px;
+  }
+  .header_text {
+    margin-top: 44px;
+    margin-bottom: 44px;
+  }
+
+}
+
+@media (min-width: 641px) and (max-width: 960px) {
+  .header {
+    background-image: url("../images/football_1280.jpg");
+  }
+  .header_wrapper {
+    padding: 40px 60px 92px;
+  }
+  .logo {
+    width: 205px;
+  }
+  .header_text {
+    margin-top: 220px;
+    margin-bottom: 180px;
+  }
+
+}
+
+@media (min-width: 961px) {
+  .header {
+    background-image: url("../images/football_1920.jpg");
+  }
+  .header_wrapper {
+    padding: 45px 120px 110px;
+  }
+  .logo {
+    width: 191px;
+  }
+  .header_text {
+    margin-top: 280px;
+    margin-bottom: 240px;
+  }
+
+  .header_headline {
+    font-size: 6vw;
+  }
+
+}
