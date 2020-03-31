@@ -100,25 +100,16 @@ body { margin: 0; padding: 0; font-family: 'OpenSans', 'Helvetica', 'Arial', san
 }
 
 .block_clear {
-  box-sizing: border-box;
-  padding: 10px 20px 50px;
   background-color: #ffffff;
-
 }
 
-.section_headline {
+.headline_section {
   color: #e7e7e7;
   font-size: 50px;
   line-height: 1.4;
   text-transform: uppercase;
 
   margin-bottom: 0.5em;
-}
-
-.block_grey {
-  box-sizing: border-box;
-  padding: 58px 20px 50px;
-  background-color: #f5f4f9;
 }
 
 .block_headline {
@@ -136,9 +127,8 @@ body { margin: 0; padding: 0; font-family: 'OpenSans', 'Helvetica', 'Arial', san
   color: #000000;
   font-size: 14px;
   font-weight: bold;
-  text-decoration: underline solid red;
-  text-decoration-thickness: 3px;
-  text-underline-offset: 3px;
+  border-bottom: 4px solid #5e42b0;
+  vertical-align: text-top;
 }
 
 .main_text p {
@@ -148,7 +138,59 @@ body { margin: 0; padding: 0; font-family: 'OpenSans', 'Helvetica', 'Arial', san
   text-decoration: none;
   text-align: left;
 }
+.block_grey {
+  background-color: #f5f4f9;
+}
 
+.block_lilac {
+  background-color: #5e42b0;
+  color: white;
+}
+
+.block_night {
+  background-color: #090c35;
+  color: white;
+}
+
+.advices_picture_wrapper {
+  position: relative;
+}
+
+.advices_picture {
+  width: 100%;
+}
+
+.advice-badge {
+  width: 70px;
+  height: 70px;
+  background-color: #5e42b0;
+  position: absolute;
+  left: 20px;
+  bottom: -12px;
+  text-align: center;
+  color: white;
+
+  box-sizing: border-box;
+  padding-top: 24px;
+}
+.number_first {
+  width: auto;
+  height: 4px;
+  border-radius: 2px;
+  display: inline-block;
+  background-color: rgba(255,255,255, .5)
+}
+
+.advices_headline {
+  color: #e7e7e7;
+  font-size: 28px;
+  line-height: 1.4;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  margin-top: 32px;
+  margin-bottom: 22px;
+}
 
 @media (max-width: 640px) and (orientation:portrait) {
   .header {
@@ -161,6 +203,9 @@ body { margin: 0; padding: 0; font-family: 'OpenSans', 'Helvetica', 'Arial', san
   .header_text {
     margin-top: 96px;
     margin-bottom: 72px;
+  }
+  .box_paragraph {
+    padding: 10px 20px 50px;
   }
 
 }
