@@ -44,6 +44,11 @@ body { margin: 0; padding: 0; font-family: 'OpenSans', 'Helvetica', 'Arial', san
 .logo {
   margin-left: auto;
   margin-right: auto;
+  fill: #ffffff;
+}
+
+.logo:hover {
+  opacity: 0.8;
 }
 
 .header_text {
@@ -69,17 +74,15 @@ body { margin: 0; padding: 0; font-family: 'OpenSans', 'Helvetica', 'Arial', san
   text-decoration: none;
   text-align: center;
   cursor: pointer;
-  font-size: 8px;
   line-height: 1.4;
   text-transform: uppercase;
 }
 
 .button:hover {
-  background-color: #5e42b0;
+  background-color: #563aa8;
 }
 
 .button_text {
-  width: 120px; /*перенести в медиа-запросы*/
   text-align: left;
   margin-left: auto;
   margin-right: auto;
@@ -90,13 +93,12 @@ body { margin: 0; padding: 0; font-family: 'OpenSans', 'Helvetica', 'Arial', san
 }
 
 .button_icon {
-  width: 24px;
-  margin-right: 10px;
   float: left;
+  fill: #ffffff;
 }
 
 
-/*content*/
+/*Sections sports*/
 
 .section_athlets {
   position: relative;
@@ -106,7 +108,8 @@ body { margin: 0; padding: 0; font-family: 'OpenSans', 'Helvetica', 'Arial', san
   color: #e7e7e7;
   line-height: 1.4;
   text-transform: uppercase;
-  margin-bottom: 0.5em;
+  margin-top: 25px;
+  margin-bottom: 16px;
 }
 
 .block_headline {
@@ -116,7 +119,7 @@ body { margin: 0; padding: 0; font-family: 'OpenSans', 'Helvetica', 'Arial', san
   margin-bottom: 0.8em;
 }
 
-.first::before { /* под вопросом*/
+.first::before { /* - нумерация параграфов под вопросом */
   content: "01";
   color: #000000;
   font-size: 14px;
@@ -125,7 +128,7 @@ body { margin: 0; padding: 0; font-family: 'OpenSans', 'Helvetica', 'Arial', san
   vertical-align: text-top;
 }
 
-.main_text p {
+p.main_text  {
   color: #000000;
   font-size: 15px;
   line-height: 1.4;
@@ -205,6 +208,14 @@ body { margin: 0; padding: 0; font-family: 'OpenSans', 'Helvetica', 'Arial', san
 
 }
 
+@media (max-width: 640px) and (orientation:landscape) {
+  .header_text {
+    margin-top: 44px;
+    margin-bottom: 32px;
+    padding: 0 24px;
+  }
+}
+
 @media (max-width: 640px) {
   .header {
     background-image: url("../images/football_1280.jpg");
@@ -226,9 +237,19 @@ body { margin: 0; padding: 0; font-family: 'OpenSans', 'Helvetica', 'Arial', san
     margin-left: 15vw;
   }
 
+  .button_text {
+    width: 120px;
+  }
+
   .button {
     padding-top: 6px;
     padding-bottom: 6px;
+    font-size: 8px;
+  }
+
+  .button_icon {
+    width: 24px;
+    margin-right: 10px;
   }
 
   .appstore_btn {
@@ -244,16 +265,18 @@ body { margin: 0; padding: 0; font-family: 'OpenSans', 'Helvetica', 'Arial', san
     letter-spacing: 2px;
   }
 
-  .box_paragraph {
-    padding: 10px 20px 50px;
+  .block_clear, .block_grey, .block_lilac {
+    padding: 56px 0px 56px;
+
+    border: 1px solid darkgrey;
   }
 
-  .footballer_wrapper {
-    height: 310px;
-    background-image: url("../images/footballer_192.png");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: contain;
+
+  .box_paragraph {
+    margin-left: 20px;
+    margin-right: 20px;
+
+    border: 1px solid grey;
   }
 
 }
@@ -261,11 +284,35 @@ body { margin: 0; padding: 0; font-family: 'OpenSans', 'Helvetica', 'Arial', san
 @media (min-width: 641px) {
   .header_buttons {
     display: flex;
+    width: 100%;
+    border: 1px solid yellow;
+  }
+
+  .button_text {
+    width: 212px;
   }
 
   .button {
     padding-top: 16px;
     padding-bottom: 16px;
+    font-size: 14px;
+
+    flex-basis: 260px;
+    flex-grow: 1;
+    max-width: 310px;
+  }
+
+  .button_icon {
+    width: 40px;
+    margin-right: 24px;
+  }
+
+  .appstore_btn {
+    margin-left: auto;
+  }
+
+  .play_btn {
+    margin-right: auto;
   }
 
   .section_headline {
@@ -309,17 +356,26 @@ body { margin: 0; padding: 0; font-family: 'OpenSans', 'Helvetica', 'Arial', san
     letter-spacing: 4px;
   }
 
-  .box_paragraph {
-    padding: 72px 33px 38px;
+  .block_clear, .block_grey, .block_lilac {
+    padding: 72px 0px 38px;
+
   }
 
-  .footballer_wrapper {
+  .box_paragraph {
+    width: 60%;
+    margin-left: auto;
+    margin-right: 33px;
+
+    border: 1px solid grey;
+  }
+
+
+  .footballer {
     position: absolute;
-    height: 310px;
-    background-image: url("../images/footballer_497.png");
-    background-repeat: no-repeat;
-    background-position: left top;
-    background-size: contain;
+    top: 0;
+    left: -150px;
+    /*width: auto;
+    height: auto;*/
   }
 
 
