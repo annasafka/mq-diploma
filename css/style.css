@@ -1,7 +1,7 @@
 
 * { margin: 0; padding: 0;}
 
-body { margin: 0; padding: 0; font-family: 'OpenSans', 'Helvetica', 'Arial', sans-serif;}
+body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvetica', 'Arial', sans-serif;}
 
 
 .header {
@@ -37,8 +37,6 @@ body { margin: 0; padding: 0; font-family: 'OpenSans', 'Helvetica', 'Arial', san
   max-width: 1532px;
   margin-left: auto;
   margin-right: auto;
-
-  border: 1px solid #f0f;
 }
 
 .logo {
@@ -52,17 +50,20 @@ body { margin: 0; padding: 0; font-family: 'OpenSans', 'Helvetica', 'Arial', san
 }
 
 .header_text {
+  font-size: 4vmin;
   text-align: left;
   line-height: 1.4;
   text-transform: uppercase;
   text-decoration: none;
+
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
-.headline_right { /*загвоздочка c заголовком*/
+.headline_right {
   display: block;
-
-  border: 1px solid red;
+  margin-left: 20%;
 }
 
 .button {
@@ -108,30 +109,49 @@ body { margin: 0; padding: 0; font-family: 'OpenSans', 'Helvetica', 'Arial', san
   color: #e7e7e7;
   line-height: 1.4;
   text-transform: uppercase;
-  margin-top: 25px;
-  margin-bottom: 16px;
 }
+
+.numbered_headline { /* нумерованные заголовки */
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+
+  color: black;
+}
+.numbered_headline::before {
+  content: "";
+  position: absolute;
+  border-radius: 2px;
+  left: 0;
+  bottom: -5px;
+
+  background-color: rgba(94,66,176, 1);
+}
+
+.block_lilac .numbered_headline::before {
+  background-color: rgba(255,255,255, 1);
+}
+
+.block_night .numbered_headline::before {
+  background-color: rgba(255,255,255, 1);
+}
+
+.block_night .numbered_headline {
+  color: #5e42b0;
+}
+
 
 .block_headline {
   color: #c1c1c1;
   line-height: 1.4;
   text-transform: uppercase;
-  margin-bottom: 0.8em;
+  display: inline-block;
+  margin-left: 10px;
 }
 
-.first::before { /* - нумерация параграфов под вопросом */
-  content: "01";
+.main_text {
   color: #000000;
-  font-size: 14px;
-  font-weight: bold;
-  border-bottom: 4px solid #5e42b0;
-  vertical-align: text-top;
-}
-
-p.main_text  {
-  color: #000000;
-  font-size: 15px;
-  line-height: 1.4;
   text-decoration: none;
   text-align: left;
 }
@@ -139,61 +159,114 @@ p.main_text  {
 .block_grey {
   background-color: #f5f4f9;
 }
-
 .block_lilac {
   background-color: #5e42b0;
-  color: white;
 }
-
 .block_night {
   background-color: #090c35;
+}
+.block_night p, .block_lilac p {
   color: white;
 }
 
-
+.section_players {
+  position: relative;
+}
 
 
 /*блок advices*/
 
-.advices_picture_wrapper {
-  position: relative;
-}
-
 .advices_picture {
-  width: 100%;
+  display: block;
+  position: relative;
+  background-color: #e7e7e7;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 }
 
-.advice-badge {
-  width: 70px;
-  height: 70px;
-  background-color: #5e42b0;
-  position: absolute;
-  left: 20px;
-  bottom: -12px;
-  text-align: center;
-  color: white;
-
-  box-sizing: border-box;
-  padding-top: 24px;
-}
 .number_first {
-  width: auto;
-  height: 4px;
+  font-weight: bold;
+  color: white;
+}
+
+.number_first::before {
+  content:"";
+  position: absolute;
   border-radius: 2px;
-  display: inline-block;
-  background-color: rgba(255,255,255, .5)
+  background-color: rgba(255,255,255, .3)
 }
 
 .advices_headline {
   color: #e7e7e7;
-  font-size: 28px;
   line-height: 1.4;
   text-transform: uppercase;
   letter-spacing: 2px;
-
-  margin-top: 32px;
-  margin-bottom: 22px;
 }
+
+/* footer */
+.footer {
+  position: relative;
+
+  background-color: #0a0e34;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.footer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background-color: rgba(10, 14, 52, 0.9);
+}
+
+.footer_wrapper {
+  position: relative;
+  z-index: 2;
+
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  max-width: 1532px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.download_wrapper {
+  text-align: center;
+}
+
+.surface_icon {
+  box-sizing: border-box;
+  fill: #ffffff;
+  background-image: linear-gradient(#50329c, #7751db);
+  text-align: center;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer_headline {
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.footer_download_text {
+  color: #9b8ec1;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+
 
 @media (max-width: 640px) and (orientation:portrait) {
   .header {
@@ -201,9 +274,12 @@ p.main_text  {
   }
 
   .header_text {
-    margin-top: 134px;
-    margin-bottom: 86px;
-    padding: 0 24px;
+    margin-top: 120px;
+    margin-bottom: 80px;
+  }
+
+  .footer {
+    background-image: url("../images/game_767.jpg");
   }
 
 }
@@ -212,7 +288,6 @@ p.main_text  {
   .header_text {
     margin-top: 44px;
     margin-bottom: 32px;
-    padding: 0 24px;
   }
 }
 
@@ -231,10 +306,6 @@ p.main_text  {
 
   .header_headline {
     font-size: 28px;
-  }
-
-  .headline_right {
-    margin-left: 15vw;
   }
 
   .button_text {
@@ -256,27 +327,122 @@ p.main_text  {
     margin-bottom: 16px;
   }
 
+  .main_text {
+    font-size: 15px;
+    line-height: 1.2;
+  }
+
   .section_headline {
     font-size: 50px;
+    margin-top: 16px;
+  }
+
+  .numbered_headline { /* нумерованные заголовки до 640px*/
+    font-size: 14px;
+    padding-top: 4px;
+  }
+  .numbered_headline::before {
+    width: 15px;
+    height: 4px;
   }
 
   .block_headline {
     font-size: 23px;
     letter-spacing: 2px;
+    margin-bottom: 16px;
   }
 
-  .block_clear, .block_grey, .block_lilac {
+  .footballer, .basketballer {
+    display: block;
+    text-align: center;
+  }
+
+  .block_clear, .block_grey, .block_lilac, .block_night {
     padding: 56px 0px 56px;
-
-    border: 1px solid darkgrey;
   }
-
 
   .box_paragraph {
     margin-left: 20px;
     margin-right: 20px;
+  }
 
-    border: 1px solid grey;
+  .advices_picture {
+    width: 100%;
+    height: 350px;
+  }
+
+  .advices_picture_first {
+    background-image: url("../images/be-active_640.jpg");
+  }
+  .advices_picture_second {
+    background-image: url("../images/find-contact_640.jpg");
+  }
+  .advices_picture_third {
+    background-image: url("../images/work-it_640.jpg");
+  }
+
+  .advice-badge { /* номер в квадрате для мобилок до 640*/
+    position: absolute;
+    left: 20px;
+    bottom: -12px;
+    background-color: #5e42b0;
+    text-align: center;
+    padding: 26px;
+  }
+
+  .number_first { /* 01 квадрат до 640 */
+    font-size: 14px;
+  }
+
+  .number_first::before { /* 01 квадрат до 640 */
+    left: calc(50% - 10px);
+    top: calc(50% + 10px);
+    width: 18px;
+    height: 4px;
+  }
+
+  .advices_headline {
+    font-size: 28px;
+    margin-top: 32px;
+    margin-bottom: 16px;
+  }
+
+  .advices_paragraph {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-bottom: 72px;
+  }
+
+  .footer {
+    background-image: url("../images/game_1280.jpg");
+  }
+
+  .footer_wrapper {
+    padding: 98px 20px 10px;
+  }
+
+  .surface_icon {
+    width: 77px;
+    height: 77px;
+    padding: 10px 7px;
+    border-radius: 14px;
+    margin-bottom: 54px;
+  }
+
+  .download_wrapper {
+    margin-bottom: 60px;
+  }
+
+  .footer_headline {
+    font-size: 32px;
+  }
+
+  .footer_download_text {
+    font-size: 14px;
+  }
+
+  .footer .logo {
+    margin-top: 120px;
   }
 
 }
@@ -285,7 +451,6 @@ p.main_text  {
   .header_buttons {
     display: flex;
     width: 100%;
-    border: 1px solid yellow;
   }
 
   .button_text {
@@ -315,9 +480,37 @@ p.main_text  {
     margin-right: auto;
   }
 
-  .section_headline {
-    font-size: 80px;
+  .numbered_headline { /* нумерованные заголовки от 641px*/
+    font-size: 18px;
+    padding-top: 8px;
   }
+  .numbered_headline::before {
+    width: 21px;
+    height: 5px;
+  }
+
+  .number_first { /* квадрат от до 641 */
+      font-size: 24px;
+    }
+
+  .number_first::before { /* квадрат от до 641 */
+      left: calc(50% - 14px);
+      top: calc(50% + 14px);
+      width: 26px;
+      height: 6px;
+    }
+
+    .surface_icon {
+      width: 140px;
+      height: 140px;
+      padding: 18px 12px;
+      border-radius: 28px;
+      margin-bottom: 68px;
+    }
+
+    .footer_headline {
+      font-size: 80px;
+    }
 
 }
 
@@ -343,41 +536,110 @@ p.main_text  {
     font-size: 64px;
   }
 
-  .headline_right {
-    margin-left: 17vw;
-  }
-
   .appstore_btn {
     margin-right: 30px;
+  }
+
+  .main_text {
+    font-size: 16px;
+    line-height: 1.75;
   }
 
   .block_headline {
     font-size: 32px;
     letter-spacing: 4px;
+    margin-bottom: 16px;
   }
 
-  .block_clear, .block_grey, .block_lilac {
-    padding: 72px 0px 38px;
-
+  .section_headline {
+    font-size: 80px;
+    margin-top: 72px;
+    margin-bottom: 10px;
   }
 
-  .box_paragraph {
+  .block_clear, .block_grey, .block_lilac, .block_night {
+    padding: 34px 0px 34px;
+  }
+
+  .section_athlets  .box_paragraph {
     width: 60%;
     margin-left: auto;
     margin-right: 33px;
-
-    border: 1px solid grey;
   }
-
 
   .footballer {
     position: absolute;
     top: 0;
-    left: -150px;
-    /*width: auto;
-    height: auto;*/
+    right: 58vw;
   }
 
+  .section_players  .box_paragraph {
+    width: 60%;
+    margin-left: 33px;
+    margin-right: auto;
+  }
+
+  .basketballer {
+    position: absolute;
+    top: -30px;
+    right: 0;
+  }
+
+  .advices_picture {
+    width: 100%;
+    height: 584px;
+  }
+
+  .advices_picture_first {
+    background-image: url("../images/be-active_960.jpg");
+  }
+  .advices_picture_second {
+    background-image: url("../images/find-contact_960.jpg");
+  }
+  .advices_picture_third {
+    background-image: url("../images/work-it_960.jpg");
+  }
+
+  .advice-badge {
+    position: absolute;
+    left: 20px;
+    bottom: -12px;
+    background-color: #5e42b0;
+    text-align: center;
+    padding: 66px;
+  }
+
+  .advices_headline {
+    font-size: 80px;
+    margin-top: 72px;
+    margin-bottom: 22px;
+  }
+
+  .advices_paragraph {
+    margin-left: 32px;
+    margin-right: 32px;
+    padding-bottom: 92px;
+  }
+
+  .footer {
+    background-image: url("../images/game_1280.jpg");
+  }
+
+  .footer_wrapper {
+    padding: 126px 32px 20px;
+  }
+
+  .download_wrapper {
+    margin-bottom: 80px;
+  }
+
+  .footer .logo {
+    margin-top: 180px;
+  }
+
+  .footer_download_text {
+    font-size: 36px;
+  }
 
 }
 
@@ -399,25 +661,162 @@ p.main_text  {
     margin-bottom: 240px;
   }
 
+  /*.headline_right {
+    width: 84%;
+  }*/
+
   .header_headline {
     font-size: 90px;
-  }
-
-  .headline_right {
-    margin-left: 17vw;
   }
 
   .appstore_btn {
     margin-right: 50px;
   }
 
+  .main_text {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
   .block_headline {
     font-size: 36px;
     letter-spacing: 4px;
+    margin-bottom: 20px;
   }
 
-  .box_paragraph {
-    padding: 104px 0 52px;
+  .section_headline {
+    font-size: 80px;
+    margin-top: 100px;
+    margin-bottom: 16px;
   }
+
+  .block_clear, .block_grey, .block_lilac, .block_night {
+    padding: 50px 0px 52px;
+  }
+
+  .section_athlets .box_paragraph {
+    width: calc(50% - 25px);
+    max-width: 716px;
+    margin-left: calc(50% - 25px);
+    margin-right: auto;
+  }
+
+  .section_players .box_paragraph {
+    width: calc(50% - 25px);
+    max-width: 716px;
+    margin-right: calc(50% - 25px);
+    margin-left: auto;
+  }
+
+  .footballer {
+    position: absolute;
+    top: 0;
+    right: 58vw;
+  }
+
+  .basketballer {
+    position: absolute;
+    bottom: 0;
+    left: 38vw;
+  }
+
+  .advices_wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .advices_wrapper:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .advices_picture {
+    width: 50%;
+    height: 730px;
+  }
+
+  .advices_picture_first {
+    background-image: url("../images/be-active_1024.jpg");
+  }
+  .advices_picture_second {
+    background-image: url("../images/find-contact_1024.jpg");
+  }
+  .advices_picture_third {
+    background-image: url("../images/work-it_1024.jpg");
+  }
+
+  .advice-badge {
+    position: absolute;
+    top: calc(50% - 80px);
+    background-color: #5e42b0;
+    text-align: center;
+    padding: 66px;
+  }
+
+  .advices_wrapper:nth-child(odd) .advice-badge {
+    right: -79px;
+  }
+  .advices_wrapper:nth-child(even) .advice-badge {
+    left: -79px;
+  }
+
+  .advices_headline {
+    font-size: 80px;
+    margin-top: 72px;
+    margin-bottom: 96px;
+  }
+
+  .advices_paragraph {
+    padding-bottom: 72px;
+    max-width: 636px;
+  }
+
+  .advices_content_wrapper {
+    width: 50%;
+  }
+
+  .advices_wrapper:nth-child(odd) .advices_paragraph {
+    margin-left: 128px;
+    margin-right: auto;
+    padding-right: 16px;
+  }
+
+  .advices_wrapper:nth-child(even) .advices_paragraph {
+    margin-right: 128px;
+    margin-left: auto;
+    padding-left: 16px;
+  }
+
+  .footer {
+    background-image: url("../images/game_1920.jpg");
+  }
+
+  .footer_wrapper {
+    padding: 226px 138px 48px;
+  }
+
+  .download_text {
+    text-align: left;
+    margin: auto auto auto 0;
+  }
+
+  .download_wrapper {
+    display: flex;
+    margin-bottom: 100px;
+  }
+
+  .surface_icon {
+    margin: 0 32px 0 auto;
+    flex: none;
+  }
+
+  .footer .logo {
+    margin-top: 240px;
+  }
+
+  .footer_download_text {
+    font-size: 30px;
+  }
+
+
 
 }
