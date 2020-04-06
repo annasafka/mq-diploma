@@ -3,6 +3,7 @@
 
 body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvetica', 'Arial', sans-serif;}
 
+/* Header */
 
 .header {
   position: relative;
@@ -50,7 +51,7 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
 }
 
 .header_text {
-  font-size: 4vmin;
+  font-size: 4vw;
   text-align: left;
   line-height: 1.4;
   text-transform: uppercase;
@@ -63,7 +64,9 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
 
 .headline_right {
   display: block;
-  margin-left: 20%;
+  width: 80%;
+  margin-left: auto;
+  border: 1px solid red;
 }
 
 .button {
@@ -99,7 +102,7 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
 }
 
 
-/*Sections sports*/
+/* Section sports */
 
 .section_athlets {
   position: relative;
@@ -141,7 +144,6 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
   color: #5e42b0;
 }
 
-
 .block_headline {
   color: #c1c1c1;
   line-height: 1.4;
@@ -174,7 +176,7 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
 }
 
 
-/*блок advices*/
+/* Advices section */
 
 .advices_picture {
   display: block;
@@ -204,7 +206,7 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
   letter-spacing: 2px;
 }
 
-/* footer */
+/* Footer */
 .footer {
   position: relative;
 
@@ -661,10 +663,6 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
     margin-bottom: 240px;
   }
 
-  /*.headline_right {
-    width: 84%;
-  }*/
-
   .header_headline {
     font-size: 90px;
   }
@@ -816,7 +814,5 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
   .footer_download_text {
     font-size: 30px;
   }
-
-
 
 }
