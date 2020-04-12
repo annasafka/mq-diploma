@@ -91,8 +91,13 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
   margin-right: auto;
 }
 
+.button_download {
+  display: block;
+}
+
 .market {
   font-weight: bold;
+  display: block;
 }
 
 .button_icon {
@@ -113,29 +118,34 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
   text-transform: uppercase;
 }
 
+.numbered_headline_wrapper {
+  display: flex;
+  align-items: flex-start;
+}
+
 .numbered_headline { /* нумерованные заголовки */
   font-weight: bold;
+  line-height: 1.6;
   position: relative;
   display: inline-block;
-  vertical-align: top;
 
   color: black;
 }
-.numbered_headline::before {
+.numbered_headline::after {
   content: "";
   position: absolute;
   border-radius: 2px;
   left: 0;
-  bottom: -5px;
+  bottom: 0;
 
   background-color: rgba(94,66,176, 1);
 }
 
-.block_lilac .numbered_headline::before {
+.block_lilac .numbered_headline::after {
   background-color: rgba(255,255,255, 1);
 }
 
-.block_night .numbered_headline::before {
+.block_night .numbered_headline::after {
   background-color: rgba(255,255,255, 1);
 }
 
@@ -177,21 +187,16 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
 
 /* Advices section */
 
-.advices_picture {
-  display: block;
-  position: relative;
-  background-color: #e7e7e7;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-}
+  .picture_wrapper {
+    position: relative;
+  }
 
 .number_first {
   font-weight: bold;
   color: white;
 }
 
-.number_first::before {
+.number_first::after {
   content:"";
   position: absolute;
   border-radius: 2px;
@@ -317,6 +322,10 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
     padding-top: 6px;
     padding-bottom: 6px;
     font-size: 8px;
+
+    max-width: 260px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .button_icon {
@@ -333,16 +342,18 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
     line-height: 1.2;
   }
 
-  .section_headline {
-    font-size: 50px;
-    margin-top: 16px;
+  .section_athlets, .section_players {
+    padding-top: 16px;
   }
 
-  .numbered_headline { /* нумерованные заголовки до 640px*/
-    font-size: 14px;
-    padding-top: 4px;
+  .section_headline {
+    font-size: 50px;
   }
-  .numbered_headline::before {
+
+  .numbered_headline {
+    font-size: 14px;
+  }
+  .numbered_headline::after {
     width: 15px;
     height: 4px;
   }
@@ -367,22 +378,11 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
     margin-right: 20px;
   }
 
-  .advices_picture {
+  .advices_picture img {
     width: 100%;
-    height: 350px;
   }
 
-  .advices_picture_first {
-    background-image: url("../images/be-active_640.jpg");
-  }
-  .advices_picture_second {
-    background-image: url("../images/find-contact_640.jpg");
-  }
-  .advices_picture_third {
-    background-image: url("../images/work-it_640.jpg");
-  }
-
-  .advice-badge { /* номер в квадрате для мобилок до 640*/
+  .advice-badge {
     position: absolute;
     left: 20px;
     bottom: -12px;
@@ -391,20 +391,24 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
     padding: 26px;
   }
 
-  .number_first { /* 01 квадрат до 640 */
+  .number_first {
     font-size: 14px;
+    color: white;
   }
 
-  .number_first::before { /* 01 квадрат до 640 */
+  .number_first::after {
     left: calc(50% - 10px);
     top: calc(50% + 10px);
     width: 18px;
     height: 4px;
   }
 
+  .advices_paragraph {
+    padding-top: 32px;
+  }
+
   .advices_headline {
     font-size: 28px;
-    margin-top: 32px;
     margin-bottom: 16px;
   }
 
@@ -451,6 +455,7 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
 @media (min-width: 641px) {
   .header_buttons {
     display: flex;
+    justify-content: center;
     width: 100%;
   }
 
@@ -481,20 +486,26 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
     margin-right: auto;
   }
 
-  .numbered_headline { /* нумерованные заголовки от 641px*/
+  .numbered_headline {
     font-size: 18px;
     padding-top: 8px;
   }
-  .numbered_headline::before {
+  .numbered_headline::after {
     width: 21px;
     height: 5px;
   }
 
-  .number_first { /* квадрат от до 641 */
+
+  .advices_paragraph {
+    padding-top: 72px;
+  }
+
+  .number_first {
       font-size: 24px;
+      color: white;
     }
 
-  .number_first::before { /* квадрат от до 641 */
+  .number_first::after { 
       left: calc(50% - 14px);
       top: calc(50% + 14px);
       width: 26px;
@@ -552,9 +563,12 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
     margin-bottom: 16px;
   }
 
+  .section_athlets, .section_players {
+    padding-top: 72px;
+  }
+
   .section_headline {
     font-size: 80px;
-    margin-top: 72px;
     margin-bottom: 10px;
   }
 
@@ -570,7 +584,7 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
 
   .footballer {
     position: absolute;
-    top: 0;
+    top: 70px;
     right: 58vw;
   }
 
@@ -582,23 +596,12 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
 
   .basketballer {
     position: absolute;
-    top: -30px;
+    top: 10px;
     right: 0;
   }
 
-  .advices_picture {
+  .advices_picture img {
     width: 100%;
-    height: 584px;
-  }
-
-  .advices_picture_first {
-    background-image: url("../images/be-active_960.jpg");
-  }
-  .advices_picture_second {
-    background-image: url("../images/find-contact_960.jpg");
-  }
-  .advices_picture_third {
-    background-image: url("../images/work-it_960.jpg");
   }
 
   .advice-badge {
@@ -612,7 +615,6 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
 
   .advices_headline {
     font-size: 80px;
-    margin-top: 72px;
     margin-bottom: 22px;
   }
 
@@ -681,9 +683,12 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
     margin-bottom: 20px;
   }
 
+  .section_athlets, .section_players {
+    padding-top: 100px;
+  }
+
   .section_headline {
     font-size: 80px;
-    margin-top: 100px;
     margin-bottom: 16px;
   }
 
@@ -707,39 +712,37 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
 
   .footballer {
     position: absolute;
-    top: 0;
+    top: 70px;
     right: 58vw;
   }
 
   .basketballer {
     position: absolute;
-    bottom: 0;
+    top: 20px;
     left: 38vw;
   }
 
   .advices_wrapper {
     display: flex;
-    align-items: center;
+    align-items: stretch;
   }
 
   .advices_wrapper:nth-child(even) {
     flex-direction: row-reverse;
   }
 
-  .advices_picture {
+  .picture_wrapper {
     width: 50%;
-    height: 730px;
+
   }
 
-  .advices_picture_first {
-    background-image: url("../images/be-active_1024.jpg");
+  .advices_picture img {
+    object-fit: cover;
+    object-position: 50%;
+    width: 100%;
+    height: 100%;
   }
-  .advices_picture_second {
-    background-image: url("../images/find-contact_1024.jpg");
-  }
-  .advices_picture_third {
-    background-image: url("../images/work-it_1024.jpg");
-  }
+
 
   .advice-badge {
     position: absolute;
@@ -758,7 +761,6 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
 
   .advices_headline {
     font-size: 80px;
-    margin-top: 72px;
     margin-bottom: 96px;
   }
 
@@ -769,6 +771,7 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
 
   .advices_content_wrapper {
     width: 50%;
+    align-self: center;
   }
 
   .advices_wrapper:nth-child(odd) .advices_paragraph {
@@ -793,16 +796,18 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
 
   .download_text {
     text-align: left;
-    margin: auto auto auto 0;
   }
 
   .download_wrapper {
     display: flex;
+    max-width: 860px;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 100px;
   }
 
   .surface_icon {
-    margin: 0 32px 0 auto;
+    margin-right: 32px;
     flex: none;
   }
 
@@ -814,4 +819,10 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
     font-size: 30px;
   }
 
+}
+
+@media (min-width:1380px){
+  .header_text {
+    font-size: 3vw;
+  }
 }
