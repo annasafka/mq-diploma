@@ -85,8 +85,9 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
   background-color: #563aa8;
 }
 
-.button_text {
+.btn_text_wrapper {
   text-align: left;
+  display: flex;
   margin-left: auto;
   margin-right: auto;
 }
@@ -101,7 +102,6 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
 }
 
 .button_icon {
-  float: left;
   fill: #ffffff;
 }
 
@@ -123,7 +123,7 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
   align-items: flex-start;
 }
 
-.numbered_headline { /* нумерованные заголовки */
+.numbered_headline { 
   font-weight: bold;
   line-height: 1.6;
   position: relative;
@@ -314,7 +314,7 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
     font-size: 28px;
   }
 
-  .button_text {
+  .btn_text_wrapper {
     width: 120px;
   }
 
@@ -358,10 +358,13 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
     height: 4px;
   }
 
+  .numbered_headline_wrapper {
+    margin-bottom: 16px;
+  }
+
   .block_headline {
     font-size: 23px;
     letter-spacing: 2px;
-    margin-bottom: 16px;
   }
 
   .footballer, .basketballer {
@@ -459,7 +462,7 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
     width: 100%;
   }
 
-  .button_text {
+  .btn_text_wrapper {
     width: 212px;
   }
 
@@ -476,14 +479,6 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
   .button_icon {
     width: 40px;
     margin-right: 24px;
-  }
-
-  .appstore_btn {
-    margin-left: auto;
-  }
-
-  .play_btn {
-    margin-right: auto;
   }
 
   .numbered_headline {
@@ -505,7 +500,7 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
       color: white;
     }
 
-  .number_first::after { 
+  .number_first::after {
       left: calc(50% - 14px);
       top: calc(50% + 14px);
       width: 26px;
@@ -557,10 +552,13 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
     line-height: 1.75;
   }
 
+  .numbered_headline_wrapper {
+    margin-bottom: 16px;
+  }
+
   .block_headline {
     font-size: 32px;
     letter-spacing: 4px;
-    margin-bottom: 16px;
   }
 
   .section_athlets, .section_players {
@@ -677,10 +675,13 @@ body { margin: 0; padding: 0; min-width: 320px; font-family: 'OpenSans', 'Helvet
     line-height: 1.4;
   }
 
+  .numbered_headline_wrapper {
+    margin-bottom: 20px;
+  }
+
   .block_headline {
     font-size: 36px;
     letter-spacing: 4px;
-    margin-bottom: 20px;
   }
 
   .section_athlets, .section_players {
